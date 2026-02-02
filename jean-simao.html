@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma Mensagem do Cosmos</title>
+    
+    <!-- Importando a fonte estilo terminal do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+    <style>
+        /* Paleta de cores cósmica: preto e âmbar/dourado */
+        body {
+            background-color: #000000; /* O vazio do espaço */
+            color: #FFBF00; /* Âmbar, a cor de estrelas distantes */
+            font-family: 'VT323', monospace;
+            font-size: 25px;
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+            overflow-wrap: break-word; 
+        }
+
+        #cosmic-message {
+            white-space: pre-wrap; 
+        }
+
+        .typed-cursor {
+            opacity: 1;
+            color: #FFBF00;
+            animation: blink 0.8s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="cosmic-message"></div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script>
+        const options = {
+            strings: [
+`> BUSCANDO FREQUÊNCIA CÓSMICA...^2000
+> SINAL DETECTADO...^1500 ORIGEM: O COSMOS.^2000
+> CARREGANDO REGISTRO ESTELAR...^2000
+> DESTINO: TRIPULANTE Alpha2548 - JEAN SIMAO.^3000
+
+JeJê,
+
+Os registros da missão de 2025 mostram claramente sua ALTA CAPACIDADE TÉCNICA e sua energia de EXECUÇÃO. Em momentos críticos, sua inteligência e velocidade ajudaram a nave a manter o ritmo e a atravessar zonas de alta complexidade.
+
+Você tem um REPERTÓRIO que se destaca na galáxia, e isso é inegável. Justamente por isso, sua presença gera impacto tanto pelo que você entrega quanto pelo que inspira ao redor. Quando você se envolve, o nível da missão sobe.
+
+Em 2026, nossa nave entra em uma fase em que o sucesso não será medido apenas pela performance individual, mas pela capacidade de FAZER TODA TRIPULAÇÃO EVOLUIR. Sua inteligência será ainda mais valiosa quando colocada a serviço do COLETIVO, ajudando outros a aprenderem, crescerem e ganharem confiança para navegar por conta própria.
+
+Tenho convicção de que, ao EXPANDIR SUA INFLUÊNCIA para além do seu próprio painel de controle, você pode se tornar um verdadeiro MULTIPLICADOR dentro da nossa galáxia. E isso muda completamente o alcance da missão.
+
+Seguimos em rota,
+Lu^4000
+
+// FIM DO REGISTRO INDIVIDUAL //^2000
+> ATIVANDO SEQUÊNCIA DE LANÇAMENTO COLETIVO...^2500
+> PASSO 1: VISTA SEU TRAJE DE VOO.^1500
+> PASSO 2: SINCRONIZE-SE COM A TRIPULAÇÃO.^1500
+> PASSO 3: AGUARDE O SINAL FINAL.^2000
+> A CONTAGEM REGRESSIVA PARA A SPACE RACE COMEÇOU.^3000
+> NOS VEMOS NA DECOLAGEM.`
+            ],
+            typeSpeed: 30, // Um pouco mais lento para um tom mais solene
+            showCursor: true,
+            cursorChar: '|',
+            autoInsertCss: true
+        };
+
+        const typed = new Typed('#cosmic-message', options);
+    </script>
+
+</body>
+</html>
