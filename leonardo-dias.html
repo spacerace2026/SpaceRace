@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma Mensagem do Cosmos</title>
+    
+    <!-- Importando a fonte estilo terminal do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+    <style>
+        /* Paleta de cores cósmica: preto e âmbar/dourado */
+        body {
+            background-color: #000000; /* O vazio do espaço */
+            color: #FFBF00; /* Âmbar, a cor de estrelas distantes */
+            font-family: 'VT323', monospace;
+            font-size: 25px;
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+            overflow-wrap: break-word; 
+        }
+
+        #cosmic-message {
+            white-space: pre-wrap; 
+        }
+
+        .typed-cursor {
+            opacity: 1;
+            color: #FFBF00;
+            animation: blink 0.8s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="cosmic-message"></div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script>
+        const options = {
+            strings: [
+`> BUSCANDO FREQUÊNCIA CÓSMICA...^2000
+> SINAL DETECTADO...^1500 ORIGEM: O COSMOS.^2000
+> CARREGANDO REGISTRO ESTELAR...^2000
+> DESTINO: TRIPULANTE Alpha5842 - LEONARDO DIAS.^3000
+
+Leo,
+
+Ao revisar os dados da missão 2025, fica claro que este foi um ano de GRANDES TRANSIÇÕES na sua trajetória. Nova cidade, novos desafios, novas responsabilidades e, no meio de tudo isso, sua ENTRADA NA NOSSA NAVE e no universo corporativo.
+
+Mesmo em meio a tantas mudanças simultâneas, você demonstrou DISPOSIÇÃO para aprender, curiosidade e vontade genuína de fazer parte da tripulação. Esse espírito de ADAPTAÇÃO é fundamental para quem está iniciando uma jornada profissional em um ambiente complexo e presencial como o nosso.
+
+Para 2026, sua missão será AJUSTAR OS SISTEMAS DA POSTURA, comunicação e convivência, entendendo cada vez mais os códigos dessa galáxia corporativa. Esses ajustes não diminuem quem você é, eles ampliam seu alcance e ACELERAM SUA EVOLUÇÃO.
+
+Acredito muito no seu crescimento e no profissional que você está começando a construir agora. Essa fase é decisiva, e você está exatamente onde precisa estar para aprender.
+
+Seguimos juntos nessa jornada,
+Lu^2000
+
+> RECEBENDO REGISTROS COLETIVOS...^2500
+> ATIVANDO SEQUÊNCIA DE LANÇAMENTO...^2500
+> PASSO 1: VISTA SEU TRAJE DE VOO.^1500
+> PASSO 2: SINCRONIZE-SE COM A TRIPULAÇÃO.^1500
+> PASSO 3: AGUARDE O SINAL FINAL.^2000
+> A CONTAGEM REGRESSIVA PARA A SPACE RACE COMEÇOU.^3000
+> NOS VEMOS NA DECOLAGEM.^2000
+
+// FIM DO REGISTRO //`
+            ],
+            typeSpeed: 20, // Um pouco mais lento para um tom mais solene
+            showCursor: true,
+            cursorChar: '|',
+            autoInsertCss: true
+        };
+
+        const typed = new Typed('#cosmic-message', options);
+    </script>
+
+</body>
+</html>
