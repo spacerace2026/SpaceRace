@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma Mensagem do Cosmos</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #000000;
+            color: #FFBF00;
+            font-family: 'VT323', monospace;
+            font-size: 25px;
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+            overflow-wrap: break-word; 
+        }
+
+        #cosmic-message {
+            white-space: pre-wrap; 
+        }
+
+        .typed-cursor {
+            opacity: 1;
+            color: #FFBF00;
+            animation: blink 0.8s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        #start-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        #start-overlay h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        #start-overlay p {
+            font-size: 20px;
+            animation: blink 1.5s infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Áudio apontando para o seu link no GitHub -->
+    <audio id="background-static" loop>
+        <!-- 👇 CÓDIGO AJUSTADO PARA O NOVO LINK 👇 -->
+        <source src="https://spacerace2026.github.io/SpaceRace/spaceship.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <div id="start-overlay">
+        <h1>SINAL CÓSMICO INTERCEPTADO PARA EDUARDO LACERDA</h1>
+        <p>[ CLIQUE PARA INICIAR A TRANSMISSÃO ]</p>
+    </div>
+
+    <div id="cosmic-message"></div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script>
+        const startOverlay = document.getElementById('start-overlay');
+        const backgroundAudio = document.getElementById('background-static');
+        
+        startOverlay.addEventListener('click', () => {
+            startOverlay.style.display = 'none';
+
+            backgroundAudio.play().catch(error => {
+                console.error("Erro ao tentar tocar o áudio:", error);
+            });
+
+            startTransmission();
+        });
+
+        function startTransmission() {
+            let scrollInterval;
+
+            const options = {
+                strings: [
+    `> BUSCANDO FREQUÊNCIA CÓSMICA...^2000
+    > SINAL DETECTADO...^1500 ORIGEM: O COSMOS.^2000
+    > CARREGANDO REGISTRO ESTELAR...^2000
+      > DESTINO: TRIPULANTE Alpha6821 - EDUARDO LACERDA.^3000
+
+    Transmissão Intergaláctica para o Tripulante Eduardo Lacerda Dinelli E Silva
+
+    Olá, Eduardo!
+
+    Em nossa jornada rumo aos confins do cosmos, sua atuação tem sido a verdadeira força gravitacional que mantém nossa missão em perfeita órbita. No último ciclo estelar, você se destacou ao orquestrar com maestria a migração dos dados do DI para o GCP, unificando todos os painéis do DI em uma constelação única, e realizando a migração dos dados do sistema MRV Terrenos 2.0 com impacto zero para os nossos clientes. Além disso, a ferramenta de importação de Excel que você desenvolveu dissipou as turbulências no sharesync, garantindo que nossa nave estivesse sempre em estabilidade.
+
+    Sua habilidade técnica — demonstrada através do domínio em PowerBI, SQL, GCP e DBT — e a capacidade de propor soluções que sempre têm o cliente como foco, fazem de você o verdadeiro farol da nossa galáxia de desenvolvimento. Adaptações rápidas, replanejamentos precisos, e seu comprometimento inabalável consolidam seu papel como referência técnica para toda a equipe.
+
+    O futuro de 2026 reserva desafios estelares e novas fronteiras a serem exploradas. Sua expertise e dedicação serão o combustível que impulsionará nossa missão rumo à inovação e ao sucesso, mantendo-nos na rota de escolha da Space Race. Sua contribuição é a constelação que ilumina nosso caminho e inspira a todos a voarem cada vez mais alto.
+
+    Avante, para as estrelas e além!
+
+    Com grande admiração,  
+    Douglas Guerra^1000
+    .^1000
+    .^1000
+    .^1000
+    > RECEBENDO REGISTROS COLETIVOS...^2000
+    > ATIVANDO SEQUÊNCIA DE LANÇAMENTO...^2000
+    > PASSO 1: VISTA SEU TRAJE DE VOO.^1000
+    > PASSO 2: SINCRONIZE-SE COM A TRIPULAÇÃO.^1000
+    > PASSO 3: AGUARDE O SINAL FINAL.^2000
+    > A CONTAGEM REGRESSIVA PARA A SPACE RACE COMEÇOU.^2000
+    > NOS VEMOS NA DECOLAGEM.^1000
+    .^1000
+    .^1000
+    // FIM DO REGISTRO //`
+                ],
+                typeSpeed: 20,
+                showCursor: true,
+                cursorChar: '|',
+                autoInsertCss: true,
+                onComplete: (self) => {
+                    clearInterval(scrollInterval);
+                }
+            };
+
+            const typed = new Typed('#cosmic-message', options);
+
+            scrollInterval = setInterval(() => {
+                window.scrollTo(0, document.body.scrollHeight);
+            }, 100);
+        }
+    </script>
+
+</body>
+</html>
