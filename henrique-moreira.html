@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma Mensagem do Cosmos</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #000000;
+            color: #FFBF00;
+            font-family: 'VT323', monospace;
+            font-size: 25px;
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+            overflow-wrap: break-word; 
+        }
+
+        #cosmic-message {
+            white-space: pre-wrap; 
+        }
+
+        .typed-cursor {
+            opacity: 1;
+            color: #FFBF00;
+            animation: blink 0.8s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        #start-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        #start-overlay h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        #start-overlay p {
+            font-size: 20px;
+            animation: blink 1.5s infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Áudio apontando para o seu link no GitHub -->
+    <audio id="background-static" loop>
+        <!-- 👇 CÓDIGO AJUSTADO PARA O NOVO LINK 👇 -->
+        <source src="https://spacerace2026.github.io/SpaceRace/spaceship.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <div id="start-overlay">
+        <h1>SINAL CÓSMICO INTERCEPTADO PARA HENRIQUE MOREIRA</h1>
+        <p>[ CLIQUE PARA INICIAR A TRANSMISSÃO ]</p>
+    </div>
+
+    <div id="cosmic-message"></div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script>
+        const startOverlay = document.getElementById('start-overlay');
+        const backgroundAudio = document.getElementById('background-static');
+        
+        startOverlay.addEventListener('click', () => {
+            startOverlay.style.display = 'none';
+
+            backgroundAudio.play().catch(error => {
+                console.error("Erro ao tentar tocar o áudio:", error);
+            });
+
+            startTransmission();
+        });
+
+        function startTransmission() {
+            let scrollInterval;
+
+            const options = {
+                strings: [
+    `> BUSCANDO FREQUÊNCIA CÓSMICA...^2000
+    > SINAL DETECTADO...^1500 ORIGEM: O COSMOS.^2000
+    > CARREGANDO REGISTRO ESTELAR...^2000
+    > DESTINO: TRIPULANTE Alpha6161 - HENRIQUE MOREIRA.^3000
+
+    Henriqueto,
+
+    Estamos nos preparando para um grande reajuste de órbita: um momento para refletir sobre a rota que trilhamos em 2025 e, juntos, traçarmos o mapa para ir ainda mais longe. Olhando para o ano que passou, é incrível ver como você alinhou sua trajetória à nossa, abraçando os objetivos da nossa frota com uma dedicação diária para ser melhor que ontem. Você se tornou uma verdadeira estrela-guia para todos os tripulantes.
+
+    Seu apoio é um dos sistemas centrais para o sucesso da nossa nave. É fantástico ver como você se tornou uma referência, dominando a navegação pelo complexo sistema verde-laranja, compreendendo cada um de seus riscos e oportunidades. Sua capacidade de enxergar o mapa cósmico completo permite que você identifique infinitas possibilidades, expandindo o impacto de nossas ações para que atinjam galáxias cada vez mais distantes. Sua precisão para recalibrar trajetórias é admirável e, com essa força de vontade, não há asteroide que possa barrar seu crescimento.
+
+    Em 2026, nossa missão nos levará a territórios ainda desconhecidos, onde cada manobra precisará de mais sincronia e intenção. Essa expedição só será possível se pudermos contar com suas análises de longo alcance, que funcionam como nosso telescópio mais potente. Sua capacidade de manter a rota clara, mesmo na escuridão do desconhecido, será o farol que manterá nossa formação unida e em perfeita sintonia.
+
+    É uma honra iniciar a ignição para este novo ciclo com você na equipe de navegação. Saber que posso contar com sua visão e sua força me dá a segurança para mirarmos em alvos ainda mais ambiciosos. Conte comigo como seu controle de missão para qualquer reajuste de órbita e para explorarmos juntos o potencial de cada nova descoberta.
+
+    Para o cosmos e além!
+
+    Com carinho, Sophi.^1000
+    .^1000
+    .^1000
+    .^1000
+    > RECEBENDO REGISTROS COLETIVOS...^2000
+    > ATIVANDO SEQUÊNCIA DE LANÇAMENTO...^2000
+    > PASSO 1: VISTA SEU TRAJE DE VOO.^1000
+    > PASSO 2: SINCRONIZE-SE COM A TRIPULAÇÃO.^1000
+    > PASSO 3: AGUARDE O SINAL FINAL.^2000
+    > A CONTAGEM REGRESSIVA PARA A SPACE RACE COMEÇOU.^2000
+    > NOS VEMOS NA DECOLAGEM.^1000
+    .^1000
+    .^1000
+    // FIM DO REGISTRO //`
+                ],
+                typeSpeed: 20,
+                showCursor: true,
+                cursorChar: '|',
+                autoInsertCss: true,
+                onComplete: (self) => {
+                    clearInterval(scrollInterval);
+                }
+            };
+
+            const typed = new Typed('#cosmic-message', options);
+
+            scrollInterval = setInterval(() => {
+                window.scrollTo(0, document.body.scrollHeight);
+            }, 100);
+        }
+    </script>
+
+</body>
+</html>
